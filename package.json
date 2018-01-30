@@ -1,0 +1,49 @@
+{
+  "name": "evergreen-migration",
+  "version": "0.0.0",
+  "description":
+    "Command line tool for migrating between major Evergreen versions.",
+  "author": "Roland Warmerdam (https://roland.codes)",
+  "keywords": [],
+  "repository": "segmentio/evergreen-migration",
+  "license": "ISC",
+  "bin": {
+    "evergreen-migration": "./lib/cli.js"
+  },
+  "files": ["lib"],
+  "scripts": {
+    "test": "xo && ava",
+    "precommit": "lint-staged"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "globby": "^7.1.1",
+    "meow": "^4.0.0",
+    "ora": "^1.3.0",
+    "sander": "^0.6.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "eslint-config-prettier": "^2.9.0",
+    "execa": "^0.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "tempy": "^0.2.1",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": ["prettier"],
+    "space": true,
+    "semicolon": false,
+    "rules": {
+      "indent": ["off"]
+    }
+  },
+  "lint-staged": {
+    "*.js": ["xo --fix", "prettier --write", "git add"],
+    "*.{json,md}": ["prettier --write", "git add"]
+  }
+}
