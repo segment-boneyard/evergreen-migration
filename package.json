@@ -42,6 +42,10 @@
       "indent": ["off"]
     }
   },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
   "lint-staged": {
     "*.js": ["xo --fix", "prettier --write", "git add"],
     "*.{json,md}": ["prettier --write", "git add"]
