@@ -9,7 +9,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { TextInput } from 'evergreen-ui'
+import { TextInput } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -24,7 +24,7 @@ import DropdownButton from './DropdownButton'
 `
   const expected = `
 import React from 'react'
-import { TextInput } from 'evergreen-ui'
+import { TextInput } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `
 
@@ -41,7 +41,7 @@ import DropdownButton from './DropdownButton'
   const expected = `
 // eslint-disable
 import React from 'react'
-import { TextInput } from 'evergreen-ui'
+import { TextInput } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -56,7 +56,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Text } from 'evergreen-ui'
+import { Text } from "evergreen-ui"
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -71,7 +71,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane, Card } from 'evergreen-ui'
+import { Pane, Card } from "evergreen-ui"
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -87,7 +87,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { TextInput, SelectMenu } from 'evergreen-ui'
+import { TextInput, SelectMenu } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -102,7 +102,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane as EGPaneCard } from 'evergreen-ui'
+import { Pane as EGPaneCard } from "evergreen-ui"
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -119,7 +119,37 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane } from 'evergreen-ui'
+import {
+  Pane
+} from "evergreen-ui"
+import DropdownButton from './DropdownButton'
+`.trim()
+
+  t.is(codemod(fixture), expected)
+})
+
+test('handles no spaces', t => {
+  const fixture = `
+import React from 'react'
+import {Pane} from 'evergreen-layers'
+import DropdownButton from './DropdownButton'
+`.trim()
+  const expected = `
+import React from 'react'
+import {Pane} from "evergreen-ui"
+import DropdownButton from './DropdownButton'
+`.trim()
+
+  t.is(codemod(fixture), expected)
+})
+
+test('handles no evergreen imports', t => {
+  const fixture = `
+import React from 'react'
+import DropdownButton from './DropdownButton'
+`.trim()
+  const expected = `
+import React from 'react'
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -133,16 +163,16 @@ import { Pane } from 'evergreen-layers'
 import DropdownButton from './DropdownButton'
 
 function test() {
-  return 'import { Pane } from 'evergreen-layers''
+  return "import { Pane } from 'evergreen-layers'"
 }
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane } from 'evergreen-ui'
+import { Pane } from "evergreen-ui"
 import DropdownButton from './DropdownButton'
 
 function test() {
-  return 'import { Pane } from 'evergreen-layers''
+  return "import { Pane } from 'evergreen-layers'"
 }
 `.trim()
 
@@ -163,7 +193,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane as EGPane, Card, TextInput, SelectMenu, Text } from 'evergreen-ui'
+import { Pane as EGPane, Card, TextInput, SelectMenu, Text } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
