@@ -20,7 +20,7 @@ const expectedOutput = `
 import React from 'react'
 import { Pane as EGPane, Card, TextInput, SelectMenu, Text } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
-`
+`.trim()
 
 test('transforms a single file', async t => {
   const outputPath = tempy.file()

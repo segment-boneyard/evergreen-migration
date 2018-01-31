@@ -56,7 +56,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Text } from "evergreen-ui"
+import { Text } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -71,7 +71,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane, Card } from "evergreen-ui"
+import { Pane, Card } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -102,7 +102,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane as EGPaneCard } from "evergreen-ui"
+import { Pane as EGPaneCard } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -119,9 +119,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import {
-  Pane
-} from "evergreen-ui"
+import { Pane } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -136,7 +134,7 @@ import DropdownButton from './DropdownButton'
 `.trim()
   const expected = `
 import React from 'react'
-import {Pane} from "evergreen-ui"
+import { Pane } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 `.trim()
 
@@ -168,7 +166,7 @@ function test() {
 `.trim()
   const expected = `
 import React from 'react'
-import { Pane } from "evergreen-ui"
+import { Pane } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 
 function test() {
@@ -195,6 +193,29 @@ import DropdownButton from './DropdownButton'
 import React from 'react'
 import { Pane as EGPane, Card, TextInput, SelectMenu, Text } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
+`.trim()
+
+  t.is(codemod(fixture), expected)
+})
+
+test('supports parsing code with object rest/spread', t => {
+  const fixture = `
+import React from 'react'
+import TextInput from 'evergreen-text-input'
+import DropdownButton from './DropdownButton'
+
+function test({...params}) {
+  return {...params}
+}
+`.trim()
+  const expected = `
+import React from 'react'
+import { TextInput } from "evergreen-ui";
+import DropdownButton from './DropdownButton'
+
+function test({...params}) {
+  return {...params}
+}
 `.trim()
 
   t.is(codemod(fixture), expected)
