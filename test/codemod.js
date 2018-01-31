@@ -198,24 +198,20 @@ import DropdownButton from './DropdownButton'
   t.is(codemod(fixture), expected)
 })
 
-test('supports parsing code with object rest/spread', t => {
+test('supports parsing new ES syntax', t => {
   const fixture = `
 import React from 'react'
 import TextInput from 'evergreen-text-input'
 import DropdownButton from './DropdownButton'
 
-function test({...params}) {
-  return {...params}
-}
+const a = do { if (true) { 'hi' } }
 `.trim()
   const expected = `
 import React from 'react'
 import { TextInput } from "evergreen-ui";
 import DropdownButton from './DropdownButton'
 
-function test({...params}) {
-  return {...params}
-}
+const a = do { if (true) { 'hi' } }
 `.trim()
 
   t.is(codemod(fixture), expected)
