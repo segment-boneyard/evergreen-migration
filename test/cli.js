@@ -63,3 +63,12 @@ test('ignores files in node_modules', async t => {
     fixture
   )
 })
+
+test('dry run mode does not change files', async t => {
+  const outputPath = tempy.file()
+  await writeFile(outputPath, fixture)
+  const result = await execa(cliPath, ['--dry-run', outputPath])
+
+  t.true(result.stdout.includes(outputPath))
+  t.is(await readFile(outputPath, { encoding: 'utf-8' }), fixture)
+})

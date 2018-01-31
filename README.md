@@ -22,9 +22,10 @@ Usage
   $ evergreen-migration '<glob>'
 
 Options
-  <glob>     Glob of files you want to migrate (node_modules is automatically ignored).
-  --version  Prints the version.
-  --help     Prints this message.
+  <glob>         Glob of files you want to migrate (node_modules is automatically ignored).
+  -d, --dry-run  Don't write anything, just show what files would have been changed.
+  --version      Prints the version.
+  --help         Prints this message.
 
 Examples
   $ evergreen-migration '**/*.js'
