@@ -1,6 +1,6 @@
 # evergreen-migration [![Build Status](https://circleci.com/gh/segmentio/evergreen-migration/tree/master.svg?style=svg)](https://circleci.com/gh/segmentio/evergreen-migration/tree/master)
 
-Command line tool for migrating from Evergreen v2 to v3.
+Command line tool for migrating from the separate `evergreen-*` packages to the new `evergreen-ui` package.
 
 _Note: only supports ES2015 `import` statements (not CommonJS `require`)._
 

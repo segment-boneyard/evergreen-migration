@@ -1,9 +1,10 @@
 {
   "name": "evergreen-migration",
   "version": "0.0.0",
-  "description": "Command line tool for migrating from Evergreen v2 to v3.",
+  "description":
+    "Command line tool for migrating from the separate `evergreen-*` packages to the new `evergreen-ui` package.",
   "author": "Roland Warmerdam (https://roland.codes)",
-  "keywords": [],
+  "keywords": ["evergreen"],
   "repository": "segmentio/evergreen-migration",
   "license": "ISC",
   "bin": {
