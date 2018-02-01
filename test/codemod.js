@@ -216,3 +216,18 @@ const a = do { if (true) { 'hi' } }
 
   t.is(codemod(fixture), expected)
 })
+
+test('transforms mismatched default exports', t => {
+  const fixture = `
+import React from 'react'
+import Colors from 'evergreen-colors'
+import DropdownButton from './DropdownButton'
+`.trim()
+  const expected = `
+import React from 'react'
+import { colors as Colors } from "evergreen-ui";
+import DropdownButton from './DropdownButton'
+`.trim()
+
+  t.is(codemod(fixture), expected)
+})
