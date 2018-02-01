@@ -146,10 +146,7 @@ test('handles no evergreen imports', t => {
 import React from 'react'
 import DropdownButton from './DropdownButton'
 `.trim()
-  const expected = `
-import React from 'react'
-import DropdownButton from './DropdownButton'
-`.trim()
+  const expected = false
 
   t.is(codemod(fixture), expected)
 })

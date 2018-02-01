@@ -72,3 +72,15 @@ test('dry run mode does not change files', async t => {
   t.true(result.stdout.includes(outputPath))
   t.is(await readFile(outputPath, { encoding: 'utf-8' }), fixture)
 })
+
+test('handles files with no evergreen imports', async t => {
+  const fixture = `
+import React from 'react'
+import DropdownButton from './DropdownButton'
+`
+  const outputPath = tempy.file()
+  await writeFile(outputPath, fixture)
+  await execa(cliPath, [outputPath])
+
+  t.is(await readFile(outputPath, { encoding: 'utf-8' }), fixture)
+})
