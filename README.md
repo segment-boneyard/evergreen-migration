@@ -1,7 +1,4 @@
-# evergreen-migration
-
-[![Build Status](https://travis-ci.org/segmentio/evergreen-migration.svg?branch=master)](https://travis-ci.org/segmentio/evergreen-migration)
-[![Dependency Status](https://david-dm.org/segmentio/evergreen-migration/status.svg)](https://david-dm.org/segmentio/evergreen-migration)
+# evergreen-migration [![Build Status](https://circleci.com/gh/segmentio/evergreen-migration/tree/master.svg?style=svg)](https://circleci.com/gh/segmentio/evergreen-migration/tree/master)
 
 Command line tool for migrating from Evergreen v2 to v3.
 
