@@ -1,6 +1,6 @@
 {
   "name": "evergreen-migration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "Command line tool for migrating from the separate `evergreen-*` packages to the new `evergreen-ui` package.",
   "author": "Roland Warmerdam (https://roland.codes)",
