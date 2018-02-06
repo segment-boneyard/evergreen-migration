@@ -2,7 +2,9 @@
 
 Command line tool for migrating from the separate `evergreen-*` packages to the new `evergreen-ui` package.
 
-_Note: only supports ES2015 `import` statements (not CommonJS `require`)._
+It rewrites the imports in JavaScript files to combine the all separate `evergreen-*` imports into a single `evergreen-ui` import.
+
+_Note: only supports ES2015 `import` statements (not CommonJS `require` calls)._
 
 ## Install
 
